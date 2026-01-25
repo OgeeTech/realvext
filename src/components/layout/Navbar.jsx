@@ -120,7 +120,7 @@ const Navbar = () => {
       </nav>
 
       {/* ================= MOBILE MENU (Sidebar Style) ================= */}
-      {/* 1. Backdrop Overlay (Optional: dims the rest of the screen) */}
+      {/* 1. Backdrop Overlay */}
       <div
         className={`fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -129,8 +129,9 @@ const Navbar = () => {
       />
 
       {/* 2. The Sidebar Menu */}
+      {/* w-[80%] for mobile, md:w-1/2 for tablets */}
       <div
-        className={`fixed top-0 right-0 h-screen w-1/2 bg-white shadow-2xl z-40 lg:hidden transform transition-transform duration-300 ease-in-out border-l border-gray-100 ${
+        className={`fixed top-0 right-0 h-screen w-[80%] md:w-1/2 bg-white shadow-2xl z-40 lg:hidden transform transition-transform duration-300 ease-in-out border-l border-gray-100 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -156,30 +157,31 @@ const Navbar = () => {
           {/* Divider */}
           <div className="w-12 h-1 bg-gray-100 rounded-full" />
 
-          {/* Social Icons */}
+          {/* Social Icons (One Row) */}
+          {/* Removed flex-wrap, added gap-6 to space them evenly on one line */}
           <div
-            className={`flex flex-wrap justify-center gap-4 text-[#0f172a] transition-all duration-500 delay-300 ${
+            className={`flex items-center justify-center gap-6 text-[#0f172a] transition-all duration-500 delay-300 ${
               isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
           >
             <a href="#" className="hover:text-green-600 transition-colors p-2">
-              <FaTwitter size={20} />
+              <FaTwitter size={22} />
             </a>
             <a href="#" className="hover:text-green-600 transition-colors p-2">
-              <FaInstagram size={20} />
+              <FaInstagram size={22} />
             </a>
             <a href="#" className="hover:text-green-600 transition-colors p-2">
-              <FaLinkedin size={20} />
+              <FaLinkedin size={22} />
             </a>
             <a href="#" className="hover:text-green-600 transition-colors p-2">
-              <FaFacebookF size={20} />
+              <FaFacebookF size={22} />
             </a>
           </div>
 
           {/* Auth Button */}
           <Link
             to="/login"
-            className={`w-full max-w-[200px] py-3 bg-[#0f172a] text-white rounded-full font-bold text-base flex justify-center items-center gap-2 hover:bg-green-900 transition-all duration-500 delay-500 shadow-lg ${
+            className={`w-full max-w-[240px] py-4 bg-[#0f172a] text-white rounded-full font-bold text-lg flex justify-center items-center gap-2 hover:bg-green-900 transition-all duration-500 delay-500 shadow-lg ${
               isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
           >
