@@ -17,7 +17,6 @@ const Hero = () => {
     };
 
     const runTyping = async () => {
-      // Clear states initially (for strict mode/reloads)
       setLine1("");
       setLine2("");
       setLine3("");
@@ -32,11 +31,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-[#eaf7f0] flex items-center font-sans">
+    // UPDATES:
+    // 1. changed min-h to 'min-h-screen' to fill the whole screen behind the fixed nav
+    // 2. added 'pt-20' (80px) to push content down below the fixed navbar
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#eaf7f0] flex items-center pt-20 font-sans">
       {/* ================= Background Image & Overlays ================= */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/img/hero.png"
+          src="/img/hero.png" // Ensure this path matches your file
           alt="Modern city skyline"
           className="
             w-full h-full 
@@ -55,7 +57,6 @@ const Hero = () => {
 
       {/* ================= Content ================= */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-12 md:py-0">
-        {/* Changed max-w-2xl to max-w-lg to reduce text width */}
         <div className="max-w-lg flex flex-col items-start gap-6">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-green-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide text-green-800 shadow-sm animate-fade-in-up">
@@ -64,14 +65,13 @@ const Hero = () => {
           </div>
 
           {/* Headline with Typewriter Effect */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-[#0f172a] min-h-[160px] md:min-h-[220px]">
+          <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-snug md:leading-tight lg:leading-[1.1] tracking-tight text-[#0f172a] min-h-[140px] md:min-h-[180px] lg:min-h-[220px]">
             {line1}
             <br />
             {line2}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-500">
               {line3}
             </span>
-            {/* Blinking Cursor */}
             <span className="animate-pulse text-green-600">|</span>
           </h1>
 
