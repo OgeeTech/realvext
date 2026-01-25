@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  /* Set Montserrat as the default font for the whole app */
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
