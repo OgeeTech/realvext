@@ -15,7 +15,12 @@ const Footer = () => {
           <span className="hidden md:inline text-gray-300">•</span>
           <p>
             Powered by{" "}
-            <span className="font-semibold text-green-600">Arcstack</span>
+            <a
+              href="https://arcstark.netlify.app/"
+              className="font-semibold text-green-600"
+            >
+              Arcstack
+            </a>
           </p>
         </div>
 
