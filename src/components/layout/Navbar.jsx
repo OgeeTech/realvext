@@ -134,15 +134,17 @@ const Navbar = () => {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
+        {/* Changed gap-8 to gap-5 for tighter layout */}
+        <div className="flex flex-col items-center justify-center h-full gap-5 p-6">
           {/* Links */}
-          <div className="flex flex-col gap-4 text-center w-full">
+          {/* Changed gap-4 to gap-1 */}
+          <div className="flex flex-col gap-1 text-center w-full">
             {navLinks.map((link, index) => (
               <Link
                 key={link.name}
                 to={link.path}
-                // Updated className with hover:bg-green-50, rounded-xl, and padding
-                className={`text-lg font-semibold block w-full py-3 rounded-xl transition-all duration-500 hover:bg-green-50 hover:text-green-700 delay-[${
+                // Changed py-3 to py-2
+                className={`text-lg font-semibold block w-full py-2 rounded-xl transition-all duration-500 hover:bg-green-50 hover:text-green-700 delay-[${
                   index * 50
                 }ms] ${
                   isOpen
@@ -160,8 +162,9 @@ const Navbar = () => {
           <div className="w-12 h-1 bg-gray-100 rounded-full" />
 
           {/* Social Icons */}
+          {/* Changed gap-6 to gap-4 */}
           <div
-            className={`flex items-center justify-center gap-6 text-[#0f172a] transition-all duration-500 delay-300 ${
+            className={`flex items-center justify-center gap-4 text-[#0f172a] transition-all duration-500 delay-300 ${
               isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
             }`}
           >
