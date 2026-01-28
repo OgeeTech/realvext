@@ -72,7 +72,7 @@ const FAQ = () => {
                 Contact Support &gt;
               </Link>
               <Link
-                to="/features"
+                to="/HowItWorks"
                 className="hover:text-green-600 transition-colors"
               >
                 How It Works &gt;
