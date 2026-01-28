@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import About from "./sections/About";
 import HowItWorks from "./sections/HowItWorks";
 import FAQ from "./sections/FAQ";
+import Marketplace from "./sections/Marketplace";
+import Community from "./sections/Community";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
 
           <Route path="/HowItWorks" element={<HowItWorks />} />
           <Route path="/FAQ" element={<FAQ />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/community" element={<Community />} />
         </Routes>
       </main>
 

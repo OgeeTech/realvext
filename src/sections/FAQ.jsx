@@ -85,7 +85,6 @@ const FAQ = () => {
             className="relative flex justify-center lg:justify-end animate-fade-in-up"
             style={{ animationDelay: "200ms" }}
           >
-            {/* <div className="absolute inset-0 bg-green-50 rounded-[3rem] transform rotate-3 scale-90 -z-10"></div> */}
             <div className="relative z-10">
               <img
                 src="/img/faq.png"
