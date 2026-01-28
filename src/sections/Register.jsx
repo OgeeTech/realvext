@@ -8,6 +8,7 @@ import {
   FaUser,
   FaPhoneAlt,
   FaArrowRight,
+  FaArrowLeft, // Import ArrowLeft
   FaCheck,
 } from "react-icons/fa";
 
@@ -125,8 +126,17 @@ const Register = () => {
         </div>
 
         {/* ================= RIGHT SIDE: REGISTER FORM ================= */}
-        <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16 order-2 lg:order-2 overflow-y-auto">
-          <div className="max-w-md mx-auto w-full">
+        <div className="relative flex flex-col justify-center p-8 md:p-12 lg:p-16 order-2 lg:order-2 overflow-y-auto">
+          {/* Back To Home Button */}
+          <Link
+            to="/"
+            className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-2 text-gray-400 hover:text-[#0f172a] transition-colors text-sm font-bold group"
+          >
+            <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />{" "}
+            Back to Home
+          </Link>
+
+          <div className="max-w-md mx-auto w-full mt-8 md:mt-0">
             <h2 className="text-3xl font-bold text-[#0f172a] mb-2">
               Create Account
             </h2>
@@ -135,7 +145,7 @@ const Register = () => {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Full Name */}
+              {/* Inputs */}
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
                   <FaUser />
@@ -151,7 +161,6 @@ const Register = () => {
                 />
               </div>
 
-              {/* Email */}
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
                   <FaEnvelope />
@@ -167,7 +176,6 @@ const Register = () => {
                 />
               </div>
 
-              {/* Phone */}
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
                   <FaPhoneAlt />
@@ -183,7 +191,6 @@ const Register = () => {
                 />
               </div>
 
-              {/* Password */}
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
                   <FaLock />
@@ -211,19 +218,19 @@ const Register = () => {
                 />
                 <label className="text-sm text-gray-500 leading-snug">
                   I agree to the{" "}
-                  <a
-                    href="#"
+                  <Link
+                    to="/terms"
                     className="text-[#0f172a] font-bold hover:underline"
                   >
                     Terms of Service
-                  </a>{" "}
+                  </Link>{" "}
                   and{" "}
-                  <a
-                    href="#"
+                  <Link
+                    to="/privacy-policy"
                     className="text-[#0f172a] font-bold hover:underline"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                   .
                 </label>
               </div>

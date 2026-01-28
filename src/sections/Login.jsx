@@ -6,7 +6,7 @@ import {
   FaEnvelope,
   FaLock,
   FaArrowRight,
-  FaCheckCircle,
+  FaArrowLeft, // Import ArrowLeft
 } from "react-icons/fa";
 
 const Login = () => {
@@ -98,8 +98,17 @@ const Login = () => {
         </div>
 
         {/* ================= RIGHT SIDE: LOGIN FORM ================= */}
-        <div className="flex flex-col justify-center p-8 md:p-16 lg:p-20">
-          <div className="max-w-md mx-auto w-full">
+        <div className="relative flex flex-col justify-center p-8 md:p-16 lg:p-20">
+          {/* Back To Home Button */}
+          <Link
+            to="/"
+            className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-2 text-gray-400 hover:text-[#0f172a] transition-colors text-sm font-bold group"
+          >
+            <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />{" "}
+            Back to Home
+          </Link>
+
+          <div className="max-w-md mx-auto w-full mt-8 md:mt-0">
             <h2 className="text-3xl font-bold text-[#0f172a] mb-2">
               Welcome back
             </h2>
@@ -108,7 +117,7 @@ const Login = () => {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Email Input */}
+              {/* Inputs remain the same... */}
               <div className="relative">
                 <label className="block text-sm font-bold text-gray-700 mb-2 ml-1">
                   Email Address
@@ -129,7 +138,6 @@ const Login = () => {
                 </div>
               </div>
 
-              {/* Password Input */}
               <div className="relative">
                 <div className="flex justify-between items-center mb-2 ml-1">
                   <label className="block text-sm font-bold text-gray-700">
@@ -158,7 +166,6 @@ const Login = () => {
                 </div>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full py-4 bg-[#0f172a] text-white rounded-xl font-bold text-lg hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-green-500/25 flex items-center justify-center gap-2 group"
@@ -168,7 +175,7 @@ const Login = () => {
               </button>
             </form>
 
-            {/* Social Login */}
+            {/* Social & Footer... */}
             <div className="mt-8">
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
@@ -191,7 +198,6 @@ const Login = () => {
               </div>
             </div>
 
-            {/* Footer */}
             <p className="text-center mt-8 text-gray-500 text-sm">
               Don't have an account?{" "}
               <Link

@@ -205,7 +205,7 @@ const FAQ = () => {
                 Contact Support <FaArrowRight size={14} />
               </Link>
               <Link
-                to="/features"
+                to="/HowItWorks"
                 className="px-6 py-3 bg-white/10 text-white border border-white/20 rounded-lg font-bold hover:bg-white/20 transition-colors"
               >
                 Learn How It Works

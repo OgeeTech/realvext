@@ -12,7 +12,10 @@ import Blog from "./sections/Blog";
 import Login from "./sections/Login";
 import Register from "./sections/Register";
 import ScrollToTop from "./components/shared/ScrollToTop";
-import Loader from "./components/shared/Loader"; // Import the Loader
+import Loader from "./components/shared/Loader";
+import Terms from "./sections/Terms";
+import PrivacyPolicy from "./sections/PrivacyPage";
+import Contact from "./sections/Contact";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -20,11 +23,10 @@ const App = () => {
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
 
-  // Simulate loading effect on initial mount
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Loads for 2 seconds
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -36,7 +38,6 @@ const App = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col relative">
-      {/* 1. Navbar sits at the top, hidden on auth pages */}
       {!isAuthPage && <Navbar />}
 
       <main className={`flex-grow ${!isAuthPage ? "pt-[80px]" : ""}`}>
@@ -50,6 +51,9 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 

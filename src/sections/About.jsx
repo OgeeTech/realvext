@@ -97,7 +97,7 @@ const About = () => {
             <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-[#0f172a] group cursor-pointer">
               {/* Overlay Image (Replace src with your team photo or office) */}
               <img
-                src="/img/hero.png" // Using your existing hero image as placeholder
+                src="/img/hero.png"
                 alt="Our Founders"
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500"
               />

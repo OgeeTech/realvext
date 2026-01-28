@@ -22,7 +22,7 @@ const Footer = () => {
         {/* Right Side: Legal Links */}
         <div className="flex items-center gap-6">
           <Link
-            to="/privacy"
+            to="/privacy-policy"
             className="hover:text-green-600 transition-colors duration-200"
           >
             Privacy Policy

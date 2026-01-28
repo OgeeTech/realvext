@@ -134,14 +134,20 @@ const HowItWorks = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* Primary Button - Green */}
-              <button className="px-10 py-4 bg-green-600 text-white rounded-full font-bold hover:bg-green-500 transition-all shadow-lg shadow-green-900/20 w-full sm:w-auto">
-                Create Free Account
-              </button>
+              <Link
+                to="/login"
+                className="px-10 py-4 bg-green-600 text-white rounded-full font-bold hover:bg-green-500 transition-all shadow-lg shadow-green-900/20 w-full sm:w-auto"
+              >
+                Join Wait List
+              </Link>
 
               {/* Secondary Button - White (High Contrast) */}
-              <button className="px-10 py-4 bg-white text-[#0f172a] rounded-full font-bold hover:bg-gray-100 transition-colors w-full sm:w-auto shadow-md">
+              <Link
+                to="/marketplace"
+                className="px-10 py-4 bg-white text-[#0f172a] rounded-full font-bold hover:bg-gray-100 transition-colors w-full sm:w-auto shadow-md"
+              >
                 View Marketplace
-              </button>
+              </Link>
             </div>
           </div>
         </div>
