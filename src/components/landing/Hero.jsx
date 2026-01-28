@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   // --- State for Typewriter Effect ---
@@ -21,7 +22,6 @@ const Hero = () => {
       setLine2("");
       setLine3("");
 
-      // Sequence: Line 1 -> Line 2 -> Line 3 (Colored)
       await typeLine("Own, Manage, Grow", setLine1, 40);
       await typeLine("Property with ", setLine2, 40);
       await typeLine("Confidence.", setLine3, 50);
@@ -31,14 +31,10 @@ const Hero = () => {
   }, []);
 
   return (
-    // UPDATES:
-    // 1. changed min-h to 'min-h-screen' to fill the whole screen behind the fixed nav
-    // 2. added 'pt-20' (80px) to push content down below the fixed navbar
     <section className="relative min-h-screen w-full overflow-hidden bg-[#eaf7f0] flex items-center pt-20 font-sans">
-      {/* ================= Background Image & Overlays ================= */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/img/hero.png" // Ensure this path matches your file
+          src="/img/hero.png"
           alt="Modern city skyline"
           className="
             w-full h-full 
@@ -84,10 +80,13 @@ const Hero = () => {
 
           {/* CTA */}
           <div className="mt-2 animate-fade-in-up delay-300">
-            <button className="group px-8 py-4 bg-[#0f172a] text-white rounded-full font-semibold text-lg hover:bg-green-900 transition-all duration-300 shadow-xl shadow-green-900/20 flex items-center gap-3 transform hover:-translate-y-1">
-              Get Started For Free
+            <Link
+              to="/register"
+              className="group px-8 py-4 bg-[#0f172a] text-white rounded-full font-semibold text-lg hover:bg-green-900 transition-all duration-300 shadow-xl shadow-green-900/20 flex items-center gap-3 transform hover:-translate-y-1"
+            >
+              Join The Wait List
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
 
           {/* Social Proof */}

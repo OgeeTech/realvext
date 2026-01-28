@@ -129,7 +129,6 @@ const Navbar = () => {
       />
 
       {/* 2. The Sidebar Menu */}
-      {/* w-[80%] for mobile, md:w-1/2 for tablets */}
       <div
         className={`fixed top-0 right-0 h-screen w-[80%] md:w-1/2 bg-white shadow-2xl z-40 lg:hidden transform transition-transform duration-300 ease-in-out border-l border-gray-100 ${
           isOpen ? "translate-x-0" : "translate-x-full"
@@ -137,16 +136,19 @@ const Navbar = () => {
       >
         <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
           {/* Links */}
-          <div className="flex flex-col gap-6 text-center w-full">
+          <div className="flex flex-col gap-4 text-center w-full">
             {navLinks.map((link, index) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-lg font-semibold block transition-all duration-500 delay-[${index * 50}ms] ${
+                // Updated className with hover:bg-green-50, rounded-xl, and padding
+                className={`text-lg font-semibold block w-full py-3 rounded-xl transition-all duration-500 hover:bg-green-50 hover:text-green-700 delay-[${
+                  index * 50
+                }ms] ${
                   isOpen
                     ? "translate-x-0 opacity-100"
                     : "translate-x-8 opacity-0"
-                } ${isActive(link.path) ? "text-green-700" : "text-gray-800"}`}
+                } ${isActive(link.path) ? "text-green-700 bg-green-50/50" : "text-gray-800"}`}
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
                 {link.name}
@@ -157,8 +159,7 @@ const Navbar = () => {
           {/* Divider */}
           <div className="w-12 h-1 bg-gray-100 rounded-full" />
 
-          {/* Social Icons (One Row) */}
-          {/* Removed flex-wrap, added gap-6 to space them evenly on one line */}
+          {/* Social Icons */}
           <div
             className={`flex items-center justify-center gap-6 text-[#0f172a] transition-all duration-500 delay-300 ${
               isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
